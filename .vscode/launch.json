@@ -1,14 +1,40 @@
 {
   "version": "0.2.0",
-  "configurations": [
+  "compounds": [
     {
-      "name": "Listen for XDebug",
+      "name": "Debug (chromium)",
+      "configurations": ["XDebug","Launch (chromium)"]
+    }
+  ],
+  "configurations": [    
+    {
+      "name": "XDebug",
       "type": "php",
       "request": "launch",
-      "port": 9000,
+      "port": 9000, // this is the "old" default port, the "new" default port is 9003
       "pathMappings": {
-        "/var/www/html/": "${workspaceRoot}/wordpress"
-      }
+        "/var/www/html/wp-content/themes/mynewtheme": "${workspaceRoot}"
+      },
+      "externalConsole": true // don't launch a browser window to the xdebug endpoint.
+    },
+    {
+      "name":"Launch (chromium)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8080",
+      
+      "runtimeExecutable": "/usr/bin/chromium-browser",
+      "runtimeArgs": [
+        "--new-window",
+        "--remote-debugging-port=9222", // this is different than the XDebug port
+        "--disable-background-networking"
+      ]
+    },
+    {
+      "name":"Launch (google chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8080"
     }
   ]
 }

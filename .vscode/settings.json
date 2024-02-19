@@ -1,4 +1,9 @@
 {
     "composer.executablePath": "/usr/local/bin/composer",
-    "phpcs.standard": "WordPress"
+    "phpcs.standard": "WordPress",
+    "php.stubs": [
+        "*",
+        "wordpress",
+        "com"
+    ]
 }

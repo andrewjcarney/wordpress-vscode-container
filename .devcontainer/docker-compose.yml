@@ -22,8 +22,9 @@ services:
     ports:
       - 8080:80
     volumes:
+      - ../:/var/www/html/wp-content/themes/mynewtheme
       - ..:/workspace:cached
-      - ../wordpress:/var/www/html
+    #  - ../wordpress:/var/www/html
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wordyuser
@@ -32,3 +33,6 @@ services:
 
 networks: 
   devnet:
+
+volumes:
+  wordpress:

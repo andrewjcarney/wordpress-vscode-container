@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "DEVSENSE.phptools-vscode",
+        "felixfbecker.php-debug",
+        "felixfbecker.php-intellisense",
+        "ikappas.composer",
+        "johnbillion.vscode-wordpress-hooks"
+    ]
+}
